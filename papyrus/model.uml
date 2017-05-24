@@ -130,5 +130,5 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
     </profileApplication>
   </uml:Model>
-  <Codegen:Project xmi:id="_NQqToDmXEeekt9OrzlmDnA" base_Model="_vNzZcDmVEeekt9OrzlmDnA" projectName="ahorcado" sourceFolder="src"/>
+  <Codegen:Project xmi:id="_NQqToDmXEeekt9OrzlmDnA" base_Model="_vNzZcDmVEeekt9OrzlmDnA" projectName="ahorcado-master" sourceFolder="src"/>
 </xmi:XMI>
