@@ -4,38 +4,51 @@
 
 package Ahorcado;
 
-import Ahorcado.Partida;
-
 /************************************************************/
 /**
  * 
  */
 public class Horca {
+	protected static final int MAX_FALLOS = 6;
 	/**
 	 * es el número de fallos que lleva el usuario, vamos a permitir 6 fallos
 	 */
 	private int fallos;
+
 	/**
-	 * 
+	 * @return the fallos
 	 */
-	public Partida partida;
+	public int getFallos() {
+		return fallos;
+	}
+
+	public Horca() {
+		fallos = 0;
+	}
 
 	/**
 	 * 
 	 */
 	public void dibujar() {
+
+		System.out.println("Fallos: " + fallos);
+
 	}
 
 	/**
 	 * incrementa el contador de fallos
 	 */
 	public void incrementarFallo() {
+		fallos++;
 	}
 
 	/**
 	 * comprueba si hemos perdido la partida
-	 * @return perdido 
+	 * 
+	 * @return perdido
 	 */
 	public boolean comprobarSiPerdido() {
+		return (fallos == MAX_FALLOS);
+
 	}
-};
+}
