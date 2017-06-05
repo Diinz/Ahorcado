@@ -102,16 +102,27 @@ public class Palabra {
 	 * @return ganado
 	 */
 	public boolean comprobarSiGanado() {
-		
+
+		boolean estanTodas = true;
 		char[] descompuesta = palabraOculta.toCharArray();
+
 		for (int i = 0; i < descompuesta.length; i++) {
+			boolean estaEnDescubiertas = false;
+
 			for (int j = 0; j < letrasDescubiertas.length; j++) {
-				
-				if(descompuesta[i]==letrasDescubiertas[j]){
-					
+
+				if (descompuesta[i] == letrasDescubiertas[j]) {
+					estaEnDescubiertas = true;
+					break;
 				}
 			}
+			if (!estaEnDescubiertas) {
+				estanTodas = false;
+				break;
+			}
 		}
+
+		return estanTodas;
 	}
 
 	/**
@@ -123,9 +134,8 @@ public class Palabra {
 	 *         que buscábamos
 	 */
 	public boolean comprobarPalabra(String palabra) {
-		
+
 		return palabraOculta.equals(palabra);
-			
-		
+
 	}
 };
