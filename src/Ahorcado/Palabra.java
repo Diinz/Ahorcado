@@ -27,11 +27,11 @@ public class Palabra {
 	/**
 	 * 
 	 */
-	public String elegirPalabra() {
+	public void elegirPalabra() {
 		String[] palabras = { "Jirafa", "Gato", "Gallo", "Elefante", "Rata", "Tortuga" };
 		String elegida = palabras[(int) Math.round((Math.random() * (palabras.length - 1)))];
 
-		return elegida;
+		palabraOculta = elegida;
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class Palabra {
 		}
 
 		for (int i = 0; i < letrasFallidas.length; i++) {
-			if (letra == letrasDescubiertas[i]) {
+			if (letra == letrasFallidas[i]) {
 
 				return true;
 			}
@@ -77,9 +77,17 @@ public class Palabra {
 			return true;
 		}
 	}
+	
+	/**
+	 * 
+	 * @param letra
+	 * 				Letra insertada por el usuario
+	 * @param destino
+	 * 				Guarda la letra insertada por el usuario.
+	 */
 
 	private void insertarLetra(char letra, char[] destino) {
-
+		// inserta la letra en una posición vacía.
 		for (int i = 0; i < destino.length; i++) {
 			if (destino[i] == '\u0000') {
 				destino[i] = letra;
