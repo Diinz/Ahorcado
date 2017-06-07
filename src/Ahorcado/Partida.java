@@ -6,6 +6,8 @@ package Ahorcado;
 
 import java.util.Scanner;
 
+import com.sun.corba.se.spi.resolver.Resolver;
+
 import Ahorcado.Horca;
 import Ahorcado.Palabra;
 import sun.applet.Main;
@@ -27,7 +29,7 @@ public class Partida {
 	/**
 	 * Muestra el estado de la horca y los resultados de palabra
 	 */
-	public void mostrarProgreso() {
+	public static void mostrarProgreso() {
 		horca.dibujar();
 		palabra.mostrarResultados();
 
@@ -50,9 +52,10 @@ public class Partida {
 
 	/**
 	 * Pide la respuesta
+	 * 
 	 * @return palabra true si era la que buscábamos o false en caso contrario
 	 */
-	public boolean resolver() {
+	public static boolean resolver() {
 		Scanner entrada = new Scanner(System.in);
 
 		System.out.print("Introduce la respuesta: ");
@@ -61,41 +64,60 @@ public class Partida {
 	}
 
 	/**
-	 * Comprueba tanto si hemos agotado los fallos como si hemos acertado todas las letras
+	 * Comprueba tanto si hemos agotado los fallos como si hemos acertado todas
+	 * las letras
+	 * 
 	 * @return fin
 	 */
 	public static boolean comprobarFinal() {
-		
+
 		return horca.comprobarSiPerdido() || palabra.comprobarSiGanado();
 	}
-	
-	public static int elegirDelMenu(){
-		
+
+	public static int elegirDelMenu() {
+
 		Scanner entrada = new Scanner(System.in);
-		
+
 		System.out.println("Elige una opción: ");
 		System.out.println("1. Letra");
 		System.out.println("2. Resolver");
 		System.out.println("3. Abandonar");
 
 		return entrada.nextInt();
-		
-		
+
 	}
 
 	public static void main(String[] args) {
 
 		Horca horca = new Horca();
-		
+
 		Palabra palabra = new Palabra();
+		boolean noHaResueltoMal = true;
 		palabra.elegirPalabra();
-		
-		
-		while(!comprobarFinal()){
-		pedirLetra();	
-			
+
+		while (!comprobarFinal() && noHaResueltoMal) {
+			switch (elegirDelMenu()) {
+			case 1:
+				palabra.comprobarLetra(pedirLetra());
+				mostrarProgreso();
+				
+				break;
+			case 2:
+				if (resolver())
+					System.out.println("Has ganado!");
+				else {
+					System.out.println("Lo siento, has perdido...");
+					noHaResueltoMal = false;
+
+				}
+				break;
+			default:
+				break;
+			}
+
+			pedirLetra();
+
 		}
-		
-		
+
 	}
 };
