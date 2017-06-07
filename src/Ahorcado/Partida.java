@@ -18,11 +18,11 @@ public class Partida {
 	/**
 	 * 
 	 */
-	public Palabra palabra;
+	public static Palabra palabra;
 	/**
 	 * 
 	 */
-	public Horca horca;
+	public static Horca horca;
 
 	/**
 	 * Muestra el estado de la horca y los resultados de palabra
@@ -64,7 +64,7 @@ public class Partida {
 	 * Comprueba tanto si hemos agotado los fallos como si hemos acertado todas las letras
 	 * @return fin
 	 */
-	public boolean comprobarFinal() {
+	public static boolean comprobarFinal() {
 		
 		return horca.comprobarSiPerdido() || palabra.comprobarSiGanado();
 		
@@ -73,5 +73,17 @@ public class Partida {
 
 	public static void main(String[] args) {
 
+		Horca horca = new Horca();
+		
+		Palabra palabra = new Palabra();
+		palabra.elegirPalabra();
+		
+		
+		while(!comprobarFinal()){
+			
+			
+		}
+		
+		
 	}
 };
