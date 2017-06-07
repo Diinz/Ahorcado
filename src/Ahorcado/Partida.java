@@ -89,9 +89,9 @@ public class Partida {
 
 	public static void main(String[] args) {
 
-		Horca horca = new Horca();
+		horca = new Horca();
 
-		Palabra palabra = new Palabra();
+		palabra = new Palabra();
 		boolean noHaResueltoMal = true;
 		palabra.elegirPalabra();
 
@@ -115,7 +115,6 @@ public class Partida {
 				break;
 			}
 
-			pedirLetra();
 
 		}
 
