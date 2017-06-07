@@ -4,6 +4,8 @@
 
 package Ahorcado;
 
+import java.util.Scanner;
+
 import Ahorcado.Horca;
 import Ahorcado.Palabra;
 import sun.applet.Main;
@@ -32,11 +34,18 @@ public class Partida {
 	}
 
 	/**
-	 * 
+	 * Solicita una letra al usuario
 	 * @return letra 
 	 */
 	public char pedirLetra() {
-	}
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.print("Introduzca una letra: ");
+		char letra = entrada.nextLine().charAt(0);
+		
+		return letra;
+		
+	}	
 
 	/**
 	 * 
