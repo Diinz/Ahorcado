@@ -30,37 +30,44 @@ public class Partida {
 	public void mostrarProgreso() {
 		horca.dibujar();
 		palabra.mostrarResultados();
-		
+
 	}
 
 	/**
 	 * Solicita una letra al usuario
-	 * @return letra 
+	 * 
+	 * @return letra
 	 */
 	public char pedirLetra() {
 		Scanner entrada = new Scanner(System.in);
-		
-		System.out.print("Introduzca una letra: ");
-		char letra = entrada.nextLine().charAt(0);
-		
-		return letra;
-		
-	}	
 
-	/**
-	 * 
-	 */
-	public void resolver() {
+		System.out.print("Introduce una letra: ");
+		char letra = entrada.nextLine().charAt(0);
+
+		return letra;
+
 	}
 
 	/**
-	 * 
-	 * @return fin 
+	 * Pide la respuesta
+	 * @return palabra true si era la que buscábamos o false en caso contrario
+	 */
+	public boolean resolver() {
+		Scanner entrada = new Scanner(System.in);
+
+		System.out.print("Introduce la respuesta: ");
+		return palabra.comprobarPalabra(entrada.nextLine());
+
+	}
+
+	/**
+	 * Comprueba tanto si hemos agotado los fallos como si hemos acertado todas las letras
+	 * @return fin
 	 */
 	public boolean comprobarFinal() {
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 	}
 };
