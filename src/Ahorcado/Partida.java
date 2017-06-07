@@ -65,6 +65,10 @@ public class Partida {
 	 * @return fin
 	 */
 	public boolean comprobarFinal() {
+		
+		return horca.comprobarSiPerdido() || palabra.comprobarSiGanado();
+		
+		
 	}
 
 	public static void main(String[] args) {
