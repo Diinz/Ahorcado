@@ -38,7 +38,7 @@ public class Partida {
 	 * 
 	 * @return letra
 	 */
-	public char pedirLetra() {
+	public static char pedirLetra() {
 		Scanner entrada = new Scanner(System.in);
 
 		System.out.print("Introduce una letra: ");
@@ -67,6 +67,18 @@ public class Partida {
 	public static boolean comprobarFinal() {
 		
 		return horca.comprobarSiPerdido() || palabra.comprobarSiGanado();
+	}
+	
+	public static int elegirDelMenu(){
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Elige una opción: ");
+		System.out.println("1. Letra");
+		System.out.println("2. Resolver");
+		System.out.println("3. Abandonar");
+
+		return entrada.nextInt();
 		
 		
 	}
@@ -80,7 +92,7 @@ public class Partida {
 		
 		
 		while(!comprobarFinal()){
-			
+		pedirLetra();	
 			
 		}
 		
