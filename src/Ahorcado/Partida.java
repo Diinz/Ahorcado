@@ -6,6 +6,7 @@ package Ahorcado;
 
 import Ahorcado.Horca;
 import Ahorcado.Palabra;
+import sun.applet.Main;
 
 /************************************************************/
 /**
@@ -22,9 +23,12 @@ public class Partida {
 	public Horca horca;
 
 	/**
-	 * 
+	 * Muestra el estado de la horca y los resultados de palabra
 	 */
 	public void mostrarProgreso() {
+		horca.dibujar();
+		palabra.mostrarResultados();
+		
 	}
 
 	/**
@@ -45,5 +49,9 @@ public class Partida {
 	 * @return fin 
 	 */
 	public boolean comprobarFinal() {
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 };

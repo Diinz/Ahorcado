@@ -21,7 +21,10 @@ public class PalabraTest {
 	public void testComprobarLetraUsada() {
 		
 		palabraOculta.comprobarLetra('j');
+		palabraOculta.comprobarLetra('e');
 		assertTrue(palabraOculta.comprobarLetraUsada('j'));
+		assertFalse(palabraOculta.comprobarLetraUsada('h'));
+
 	}
 	
 	
