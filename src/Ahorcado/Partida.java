@@ -100,7 +100,7 @@ public class Partida {
 			case 1:
 				palabra.comprobarLetra(pedirLetra());
 				mostrarProgreso();
-				
+
 				break;
 			case 2:
 				if (resolver())
@@ -111,12 +111,15 @@ public class Partida {
 
 				}
 				break;
+			case 3:
+				System.exit(0);
+				break;
+
 			default:
 				break;
+
 			}
 
-
 		}
-
 	}
-};
+}
