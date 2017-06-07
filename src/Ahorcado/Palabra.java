@@ -77,13 +77,13 @@ public class Palabra {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * 
 	 * @param letra
-	 * 				Letra insertada por el usuario
+	 *            Letra insertada por el usuario
 	 * @param destino
-	 * 				Guarda la letra insertada por el usuario.
+	 *            Guarda la letra insertada por el usuario.
 	 */
 
 	private void insertarLetra(char letra, char[] destino) {
@@ -102,18 +102,38 @@ public class Palabra {
 	 * fallidas
 	 */
 	public void mostrarResultados() {
-		
-		System.out.println("Letras acertadas: ");
-		
-		for (int i = 0; i < letrasDescubiertas.length; i++) {
-			if(letrasDescubiertas[i] == '\u0000')System.out.println(letrasDescubiertas[i]);
+		char[] descompuesta = palabraOculta.toCharArray();
+
+		System.out.println("Progreso: ");
+		for (int i = 0; i < descompuesta.length; i++) {
+			boolean estaEndescubiertas = false;
+			for (int j = 0; j < letrasDescubiertas.length; j++) {
+				if (descompuesta[i] == letrasDescubiertas[j]) {
+					estaEndescubiertas = true;
+					break;
+				}
+			}
+			if (estaEndescubiertas)
+				System.out.println(descompuesta[i]);
+			else
+				System.out.println("_");
 		}
 		System.out.println();
-		
+		System.out.println("Letras acertadas: ");
+
+		for (int i = 0; i < letrasDescubiertas.length; i++) {
+			if (letrasDescubiertas[i] == '\u0000')
+				System.out.println(letrasDescubiertas[i]);
+		}
+		System.out.println();
+
 		System.out.println("Letras falladas: ");
 		for (int i = 0; i < letrasFallidas.length; i++) {
-			if(letrasFallidas[i] == '\u0000')System.out.println(letrasFallidas[i]);
+			if (letrasFallidas[i] == '\u0000')
+				System.out.println(letrasFallidas[i]);
 		}
+
+		System.out.println();
 	}
 
 	/**
