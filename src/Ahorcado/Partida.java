@@ -98,7 +98,7 @@ public class Partida {
 		while (!comprobarFinal() && noHaResueltoMal) {
 			switch (elegirDelMenu()) {
 			case 1:
-				palabra.comprobarLetra(pedirLetra());
+				if(!palabra.comprobarLetra(pedirLetra())) horca.incrementarFallo();
 				mostrarProgreso();
 
 				break;
