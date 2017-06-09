@@ -35,7 +35,10 @@ public class Palabra {
 	}
 
 	/**
+	 * 
+	 * @param letra 
 	 * Comprueba si la letra ya ha sido usada.
+	 * @return boolean
 	 */
 	public boolean comprobarLetraUsada(char letra) {
 
@@ -166,10 +169,11 @@ public class Palabra {
 	}
 
 	/**
-	 * comprueba si la palabra propuesta por el jugador coincide con la palabra
-	 * oculta (quiero resolver)
+	 *
 	 * 
 	 * @param palabra
+	 * 	 comprueba si la palabra propuesta por el jugador coincide con la palabra
+	 * oculta (quiero resolver)
 	 * @return adivinada adivinada es verdadero si la palabra coincide con la
 	 *         que buscábamos
 	 */
